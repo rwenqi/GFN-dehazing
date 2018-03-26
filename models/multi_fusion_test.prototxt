@@ -41,11 +41,7 @@ layer {
 #-----------------------------------------------------scale 1 encoder-------------------------------------------------------
 layer {
   name: "s1_e1conv1"  type: "Convolution"  bottom: "s1_pool1"  top: "s1_e1conv1"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3  dilation: 1   stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s1e1c1"  type: "ReLU"  bottom: "s1_e1conv1"  top: "s1_e1conv1"  relu_param{    negative_slope: 0.1  }}
@@ -53,88 +49,56 @@ layer {  name: "relu_s1e1c1"  type: "ReLU"  bottom: "s1_e1conv1"  top: "s1_e1con
 
 layer {
   name: "s1_e1conv2"  type: "Convolution"  bottom: "s1_e1conv1"  top: "s1_e1conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3  dilation: 1    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s1e1c2"  type: "ReLU"  bottom: "s1_e1conv2"  top: "s1_e1conv2"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s1_e1conv3"  type: "Convolution"  bottom: "s1_e1conv2"  top: "s1_e1conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3   dilation: 1    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s1e1c3"  type: "ReLU"  bottom: "s1_e1conv3"  top: "s1_e1conv3"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s1_e2conv1"  type: "Convolution"  bottom: "s1_e1conv3"  top: "s1_e2conv1"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 64    kernel_size: 3   dilation: 1     stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s1e2c1"  type: "ReLU"  bottom: "s1_e2conv1"  top: "s1_e2conv1"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s1_e2conv2"  type: "Convolution"  bottom: "s1_e2conv1"  top: "s1_e2conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s1e2c2"  type: "ReLU"  bottom: "s1_e2conv2"  top: "s1_e2conv2"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s1_e2conv3"  type: "Convolution"  bottom: "s1_e2conv2"  top: "s1_e2conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s1e2c2"  type: "ReLU"  bottom: "s1_e2conv3"  top: "s1_e2conv3"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s1_e3conv1"  type: "Convolution"  bottom: "s1_e2conv3"  top: "s1_e3conv1"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s1e3c1"  type: "ReLU"  bottom: "s1_e3conv1"  top: "s1_e3conv1"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s1_e3conv2"  type: "Convolution"  bottom: "s1_e3conv1"  top: "s1_e3conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s1e3c2"  type: "ReLU"  bottom: "s1_e3conv2"  top: "s1_e3conv2"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s1_e3conv3"  type: "Convolution"  bottom: "s1_e3conv2"  top: "s1_e3conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s1e3c3"  type: "ReLU"  bottom: "s1_e3conv3"  top: "s1_e3conv3"  relu_param{    negative_slope: 0.1  }}
@@ -145,32 +109,20 @@ layer {
   name: "s1_d1conv1"  type: "Deconvolution"  bottom: "s1_e3conv3"  top: "s1_d1conv1"
   convolution_param {
     kernel_size: 3		stride: 1		group : 1    num_output: 32    pad: 1
-	weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
-  param {	lr_mult: 1	decay_mult: 1	}
-  param {	lr_mult: 0	decay_mult: 0	}
 }
 layer {  name: "relu_s1d1c1"  type: "ReLU"  bottom: "s1_d1conv1"  top: "s1_d1conv1"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s1_d1conv2"  type: "Convolution"  bottom: "s1_d1conv1"  top: "s1_d1conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s1d1c2"  type: "ReLU"  bottom: "s1_d1conv2"  top: "s1_d1conv2"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s1_d1conv3"  type: "Convolution"  bottom: "s1_d1conv2"  top: "s1_d1conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s1d1c3"  type: "ReLU"  bottom: "s1_d1conv3"  top: "s1_d1conv3"  relu_param{    negative_slope: 0.1  }}
@@ -179,33 +131,21 @@ layer {
   name: "s1_d2conv1"  type: "Deconvolution"  bottom: "s1_d1conv3"  top: "s1_d2conv1"
   convolution_param {
     kernel_size: 3		stride: 1	group : 1    num_output: 32    pad: 1
-	weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
-  param {	lr_mult: 1	decay_mult: 1	}
-  param {	lr_mult: 0	decay_mult: 0	}
 }
 layer {  name: "relu_s1d2c1"  type: "ReLU"  bottom: "s1_d2conv1"  top: "s1_d2conv1"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s1_d2conv2"  type: "Convolution"  bottom: "s1_d2conv1"  top: "s1_d2conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {
     num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s1d2c2"  type: "ReLU"  bottom: "s1_d2conv2"  top: "s1_d2conv2"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s1_d2conv3"  type: "Convolution"  bottom: "s1_d2conv2"  top: "s1_d2conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s1d2c3"  type: "ReLU"  bottom: "s1_d2conv3"  top: "s1_d2conv3"  relu_param{    negative_slope: 0.1  }}
@@ -214,22 +154,14 @@ layer {
   name: "s1_d3conv1"  type: "Deconvolution"  bottom: "s1_d2conv3"  top: "s1_d3conv1"
   convolution_param {    
     kernel_size: 3		stride: 1	group : 1    num_output: 32    pad: 1
-	weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
-  param {	lr_mult: 1	decay_mult: 1	}
-  param {	lr_mult: 0	decay_mult: 0	}
 }
 layer {  name: "relu_s1d3c1"  type: "ReLU"  bottom: "s1_d3conv1"  top: "s1_d3conv1"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s1_d3conv2"  type: "Convolution"  bottom: "s1_d3conv1"  top: "s1_d3conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {
     num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s1d3c2"  type: "ReLU"  bottom: "s1_d3conv2"  top: "s1_d3conv2"  relu_param{    negative_slope: 0.1  }}
@@ -248,12 +180,8 @@ layer {
 
 layer {
   name: "s1_d3conv3"  type: "Convolution"  bottom: "s1_concat_features"  top: "s1_d3conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {
     num_output: 3    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s1d3c3"  type: "ReLU"  bottom: "s1_d3conv3"  top: "s1_d3conv3"  relu_param{    negative_slope: 0.1  }}
@@ -373,11 +301,7 @@ layer {
   name: "s2_up1"  type: "Deconvolution"  bottom: "s1_dehazed"  top: "s1_dehazed_up"
   convolution_param {
     kernel_size: 4		stride: 2		group : 1    num_output: 3    pad: 1
-	weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
-  param {	lr_mult: 1	decay_mult: 1	}
-  param {	lr_mult: 0	decay_mult: 0	}
 }
 layer {  name: "relu_s2up1"  type: "ReLU"  bottom: "s1_dehazed_up"  top: "s1_dehazed_up"  relu_param{    negative_slope: 0.1  }}
 
@@ -394,99 +318,63 @@ layer {
 
 layer {
   name: "s2_e1conv1"  type: "Convolution"  bottom: "s2_data"  top: "s2_e1conv1"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 5   dilation: 2  stride: 1    group : 1    pad: 4
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s2e1c1"  type: "ReLU"  bottom: "s2_e1conv1"  top: "s2_e1conv1"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s2_e1conv2"  type: "Convolution"  bottom: "s2_e1conv1"  top: "s2_e1conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3   dilation: 2  stride: 1    group : 1    pad: 2
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s2e1c2"  type: "ReLU"  bottom: "s2_e1conv2"  top: "s2_e1conv2"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s2_e1conv3"  type: "Convolution"  bottom: "s2_e1conv2"  top: "s2_e1conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3   dilation: 2   stride: 1    group : 1    pad: 2
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s2e1c3"  type: "ReLU"  bottom: "s2_e1conv3"  top: "s2_e1conv3"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s2_e2conv1"  type: "Convolution"  bottom: "s2_e1conv3"  top: "s2_e2conv1"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3   dilation: 2    stride: 1    group : 1    pad: 2
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s2e2c1"  type: "ReLU"  bottom: "s2_e2conv1"  top: "s2_e2conv1"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s2_e2conv2"  type: "Convolution"  bottom: "s2_e2conv1"  top: "s2_e2conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s2e2c2"  type: "ReLU"  bottom: "s2_e2conv2"  top: "s2_e2conv2"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s2_e2conv3"  type: "Convolution"  bottom: "s2_e2conv2"  top: "s2_e2conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s2e2c2"  type: "ReLU"  bottom: "s2_e2conv3"  top: "s2_e2conv3"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s2_e3conv1"  type: "Convolution"  bottom: "s2_e2conv3"  top: "s2_e3conv1"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s2e3c1"  type: "ReLU"  bottom: "s2_e3conv1"  top: "s2_e3conv1"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s2_e3conv2"  type: "Convolution"  bottom: "s2_e3conv1"  top: "s2_e3conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s2e3c2"  type: "ReLU"  bottom: "s2_e3conv2"  top: "s2_e3conv2"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s2_e3conv3"  type: "Convolution"  bottom: "s2_e3conv2"  top: "s2_e3conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s2e3c3"  type: "ReLU"  bottom: "s2_e3conv3"  top: "s2_e3conv3"  relu_param{    negative_slope: 0.1  }}
@@ -497,32 +385,20 @@ layer {
   name: "s2_d1conv1"  type: "Deconvolution"  bottom: "s2_e3conv3"  top: "s2_d1conv1"
   convolution_param {
     kernel_size: 3		stride: 1		group : 1    num_output: 32    pad: 1
-	weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
-  param {	lr_mult: 1	decay_mult: 1	}
-  param {	lr_mult: 0	decay_mult: 0	}
 }
 layer {  name: "relu_s2d1c1"  type: "ReLU"  bottom: "s2_d1conv1"  top: "s2_d1conv1"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s2_d1conv2"  type: "Convolution"  bottom: "s2_d1conv1"  top: "s2_d1conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s2d1c2"  type: "ReLU"  bottom: "s2_d1conv2"  top: "s2_d1conv2"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s2_d1conv3"  type: "Convolution"  bottom: "s2_d1conv2"  top: "s2_d1conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s2d1c3"  type: "ReLU"  bottom: "s2_d1conv3"  top: "s2_d1conv3"  relu_param{    negative_slope: 0.1  }}
@@ -531,33 +407,21 @@ layer {
   name: "s2_d2conv1"  type: "Deconvolution"  bottom: "s2_d1conv3"  top: "s2_d2conv1"
   convolution_param {
     kernel_size: 3		stride: 1	group : 1    num_output: 32    pad: 1
-	weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
-  param {	lr_mult: 1	decay_mult: 1	}
-  param {	lr_mult: 0	decay_mult: 0	}
 }
 layer {  name: "relu_s2d2c1"  type: "ReLU"  bottom: "s2_d2conv1"  top: "s2_d2conv1"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s2_d2conv2"  type: "Convolution"  bottom: "s2_d2conv1"  top: "s2_d2conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {
     num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s2d2c2"  type: "ReLU"  bottom: "s2_d2conv2"  top: "s2_d2conv2"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s2_d2conv3"  type: "Convolution"  bottom: "s2_d2conv2"  top: "s2_d2conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s2d2c3"  type: "ReLU"  bottom: "s2_d2conv3"  top: "s2_d2conv3"  relu_param{    negative_slope: 0.1  }}
@@ -566,22 +430,14 @@ layer {
   name: "s2_d3conv1"  type: "Deconvolution"  bottom: "s2_d2conv3"  top: "s2_d3conv1"
   convolution_param {    
     kernel_size: 3		stride: 1	group : 1    num_output: 32    pad: 1
-	weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
-  param {	lr_mult: 1	decay_mult: 1	}
-  param {	lr_mult: 0	decay_mult: 0	}
 }
 layer {  name: "relu_s2d3c1"  type: "ReLU"  bottom: "s2_d3conv1"  top: "s2_d3conv1"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s2_d3conv2"  type: "Convolution"  bottom: "s2_d3conv1"  top: "s2_d3conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {
     num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s2d3c2"  type: "ReLU"  bottom: "s2_d3conv2"  top: "s2_d3conv2"  relu_param{    negative_slope: 0.1  }}
@@ -600,12 +456,8 @@ layer {
 
 layer {
   name: "s2_d3conv3"  type: "Convolution"  bottom: "s2_concat_features"  top: "s2_d3conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {
     num_output: 3    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s2d3c3"  type: "ReLU"  bottom: "s2_d3conv3"  top: "s2_d3conv3"  relu_param{    negative_slope: 0.1  }}
@@ -716,11 +568,7 @@ layer {
 layer {
   name: "s3_up2"  type: "Deconvolution"  bottom: "s2_dehazed"  top: "s2_dehazed_up"
   convolution_param {    kernel_size: 4		stride: 2		group : 1    num_output: 3    pad: 1
-	weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
-  param {	lr_mult: 1	decay_mult: 1	}
-  param {	lr_mult: 0	decay_mult: 0	}
 }
 layer {  name: "relu_s3up2"  type: "ReLU"  bottom: "s2_dehazed_up"  top: "s2_dehazed_up"  relu_param{    negative_slope: 0.1  }}
 
@@ -736,99 +584,63 @@ layer {
 
 layer {
   name: "s3_e1conv1"  type: "Convolution"  bottom: "s3_data"  top: "s3_e1conv1"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 7   dilation: 3  stride: 1    group : 1    pad: 9
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s3e1c1"  type: "ReLU"  bottom: "s3_e1conv1"  top: "s3_e1conv1"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s3_e1conv2"  type: "Convolution"  bottom: "s3_e1conv1"  top: "s3_e1conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3   dilation: 3   stride: 1    group : 1    pad: 3
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s3e1c2"  type: "ReLU"  bottom: "s3_e1conv2"  top: "s3_e1conv2"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s3_e1conv3"  type: "Convolution"  bottom: "s3_e1conv2"  top: "s3_e1conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3   dilation: 3   stride: 1    group : 1    pad: 3
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s3e1c3"  type: "ReLU"  bottom: "s3_e1conv3"  top: "s3_e1conv3"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s3_e2conv1"  type: "Convolution"  bottom: "s3_e1conv3"  top: "s3_e2conv1"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3   dilation: 3   stride: 1    group : 1    pad: 3
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s3e2c1"  type: "ReLU"  bottom: "s3_e2conv1"  top: "s3_e2conv1"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s3_e2conv2"  type: "Convolution"  bottom: "s3_e2conv1"  top: "s3_e2conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s3e2c2"  type: "ReLU"  bottom: "s3_e2conv2"  top: "s3_e2conv2"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s3_e2conv3"  type: "Convolution"  bottom: "s3_e2conv2"  top: "s3_e2conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s3e2c2"  type: "ReLU"  bottom: "s3_e2conv3"  top: "s3_e2conv3"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s3_e3conv1"  type: "Convolution"  bottom: "s3_e2conv3"  top: "s3_e3conv1"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s3e3c1"  type: "ReLU"  bottom: "s3_e3conv1"  top: "s3_e3conv1"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s3_e3conv2"  type: "Convolution"  bottom: "s3_e3conv1"  top: "s3_e3conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s3e3c2"  type: "ReLU"  bottom: "s3_e3conv2"  top: "s3_e3conv2"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s3_e3conv3"  type: "Convolution"  bottom: "s3_e3conv2"  top: "s3_e3conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s3e3c3"  type: "ReLU"  bottom: "s3_e3conv3"  top: "s3_e3conv3"  relu_param{    negative_slope: 0.1  }}
@@ -839,32 +651,20 @@ layer {
   name: "s3_d1conv1"  type: "Deconvolution"  bottom: "s3_e3conv3"  top: "s3_d1conv1"
   convolution_param {
     kernel_size: 3		stride: 1		group : 1    num_output: 32    pad: 1
-	weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
-  param {	lr_mult: 1	decay_mult: 1	}
-  param {	lr_mult: 0	decay_mult: 0	}
 }
 layer {  name: "relu_s3d1c1"  type: "ReLU"  bottom: "s3_d1conv1"  top: "s3_d1conv1"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s3_d1conv2"  type: "Convolution"  bottom: "s3_d1conv1"  top: "s3_d1conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s3d1c2"  type: "ReLU"  bottom: "s3_d1conv2"  top: "s3_d1conv2"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s3_d1conv3"  type: "Convolution"  bottom: "s3_d1conv2"  top: "s3_d1conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s3d1c3"  type: "ReLU"  bottom: "s3_d1conv3"  top: "s3_d1conv3"  relu_param{    negative_slope: 0.1  }}
@@ -872,33 +672,21 @@ layer {  name: "relu_s3d1c3"  type: "ReLU"  bottom: "s3_d1conv3"  top: "s3_d1con
 layer {
   name: "s3_d2conv1"  type: "Deconvolution"  bottom: "s3_d1conv3"  top: "s3_d2conv1"
   convolution_param {    kernel_size: 3		stride: 1	group : 1    num_output: 32    pad: 1
-	weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
-  param {	lr_mult: 1	decay_mult: 1	}
-  param {	lr_mult: 0	decay_mult: 0	}
 }
 layer {  name: "relu_s3d2c1"  type: "ReLU"  bottom: "s3_d2conv1"  top: "s3_d2conv1"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s3_d2conv2"  type: "Convolution"  bottom: "s3_d2conv1"  top: "s3_d2conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {
     num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s3d2c2"  type: "ReLU"  bottom: "s3_d2conv2"  top: "s3_d2conv2"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s3_d2conv3"  type: "Convolution"  bottom: "s3_d2conv2"  top: "s3_d2conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {    num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s3d2c3"  type: "ReLU"  bottom: "s3_d2conv3"  top: "s3_d2conv3"  relu_param{    negative_slope: 0.1  }}
@@ -907,22 +695,14 @@ layer {
   name: "s3_d3conv1"  type: "Deconvolution"  bottom: "s3_d2conv3"  top: "s3_d3conv1"
   convolution_param {    
     kernel_size: 3		stride: 1	group : 1    num_output: 32    pad: 1
-	weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
-  param {	lr_mult: 1	decay_mult: 1	}
-  param {	lr_mult: 0	decay_mult: 0	}
 }
 layer {  name: "relu_s3d3c1"  type: "ReLU"  bottom: "s3_d3conv1"  top: "s3_d3conv1"  relu_param{    negative_slope: 0.1  }}
 
 layer {
   name: "s3_d3conv2"  type: "Convolution"  bottom: "s3_d3conv1"  top: "s3_d3conv2"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {
     num_output: 32    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s3d3c2"  type: "ReLU"  bottom: "s3_d3conv2"  top: "s3_d3conv2"  relu_param{    negative_slope: 0.1  }}
@@ -941,12 +721,8 @@ layer {
 
 layer {
   name: "s3_d3conv3"  type: "Convolution"  bottom: "s3_concat_features"  top: "s3_d3conv3"
-  param {    lr_mult: 1    decay_mult: 1  }
-  param {    lr_mult: 2    decay_mult: 0  }
   convolution_param {
     num_output: 3    kernel_size: 3    stride: 1    group : 1    pad: 1
-    weight_filler {      type: "xavier"    }
-    bias_filler {      type: "constant"          value:0    }
   }
 }
 layer {  name: "relu_s3d3c3"  type: "ReLU"  bottom: "s3_d3conv3"  top: "s3_d3conv3"  relu_param{    negative_slope: 0.1  }}
