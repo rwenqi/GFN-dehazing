@@ -1,9 +1,7 @@
 # ---------- dehazing prototxt ----------
 name: "Multi_fusion"
 # without bn layers
-# seperate RNNs
 # 12 channel: haze, whitebalance, contrast, gamma
-# conv:k5-32,3-64,3-128,deconv:k4-64,4-32,4-16
 input:"data"
 input_dim:1
 input_dim:12
