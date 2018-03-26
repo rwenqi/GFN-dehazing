@@ -25,7 +25,8 @@ Users can use demo_test to generate the results of any images.
 # Citations
 Please cite this paper in your publications if it helps your research:    
 @inproceedings{Ren-CVPR-2018,    
-&nbsp;   author = {Ren, Wenqi and Ma, Lin and Zhang, Jiawei and Pan, Jinshan and Cao, Xiaochun and Liu, Wei and Yang, Ming-Hsuan},    
+&nbsp;   author = {Ren, Wenqi and Ma, Lin and Zhang, Jiawei and Pan, Jinshan and Cao, Xiaochun and Liu, Wei and Yang, Ming-Hsuan},  
+
 &nbsp;   title = {Gated Fusion network for Single Image Dehazing},    
 &nbsp;   booktitle = {IEEE Conference on Computer Vision and Pattern Recognition},   
 &nbsp;   year = {2018}   
