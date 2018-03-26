@@ -19,7 +19,7 @@ proposed algorithm performs favorably against the stateof-the-art algorithms.
 
 # Setup
 Please refer [Caffe](https://github.com/BVLC/caffe) for installation details.  
-Basically, you need to first modify the MATLAB_DIR in Makefile.config and then run the following commands for a successful compilation:
+Basically, you need to first modify the [MATLAB_DIR](https://github.com/BVLC/caffe/issues/4510) in Makefile.config and then run the following commands for a successful compilation:
 
 
 # Scripts and pre-trained models
