@@ -28,5 +28,5 @@ Please cite this paper in your publications if it helps your research:
       author = {Ren, Wenqi and Ma, Lin and Zhang, Jiawei and Pan, Jinshan and Cao, Xiaochun and Liu, Wei and Yang, Ming-Hsuan},    
       title = {Gated Fusion network for Single Image Dehazing},    
       booktitle = {IEEE Conference on Computer Vision and Pattern Recognition},   
-      year = {2018}
+      year = {2018}   
 }
