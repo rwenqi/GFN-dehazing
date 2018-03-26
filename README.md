@@ -17,6 +17,11 @@ both synthetic and real-world images demonstrate that the
 proposed algorithm performs favorably against the stateof-the-art algorithms.
 
 
+# Setup
+Please refer Caffe for installation details.  
+Basically, you need to first modify the MATLAB_DIR in Makefile.config and then run the following commands for a successful compilation:
+
+
 # Scripts and pre-trained models
 The pre-trained model can be found in models/snapshot.      
 Users can use demo_test to generate the results of any images.  
